@@ -1,9 +1,11 @@
 const dialog = document.querySelector('#letter-dialog');
 let letterOpener;
+let continueToDates = false;
 
 document.querySelectorAll('[data-open-letter]').forEach(button => {
   button.addEventListener('click', () => {
     letterOpener = button;
+    continueToDates = false;
     dialog.showModal();
     document.body.classList.add('modal-open');
   });
@@ -16,12 +18,17 @@ dialog.addEventListener('click', event => {
 });
 dialog.addEventListener('close', () => {
   document.body.classList.remove('modal-open');
+  if (continueToDates) {
+    document.querySelector('#next-chapter').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    document.querySelector('.date-card').focus({ preventScroll: true });
+    continueToDates = false;
+    return;
+  }
   letterOpener?.focus({ preventScroll: true });
 });
 document.querySelector('#letter-to-dates').addEventListener('click', () => {
+  continueToDates = true;
   dialog.close();
-  document.querySelector('#next-chapter').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
-  document.querySelector('.date-card').focus({ preventScroll: true });
 });
 
 const notes = [
