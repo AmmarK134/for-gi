@@ -25,4 +25,4 @@ The heart background loops continuously behind the content and never intercepts 
 
 ## Hosting
 
-Every push to `main` runs `.github/workflows/pages.yml`, which publishes `dist/` to GitHub Pages. The repository is private, but the published site is viewable by anyone who has the URL; the `noindex` meta tag only keeps search engines away. Share the link intentionally.
+Every push to `main` runs `.github/workflows/pages.yml`, which publishes `dist/` to GitHub Pages. The site lives at https://ammark134.github.io/for-gi/ and is viewable by anyone who has the URL; the `noindex` meta tag only keeps search engines away. Share the link intentionally.
