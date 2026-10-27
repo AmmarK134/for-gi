@@ -13,6 +13,35 @@ document.querySelectorAll('[data-duck-art]').forEach(duck => {
   duck.append(duckTemplate.content.cloneNode(true));
 });
 
+// A fixed, decorative layer stays with the visitor as they scroll.
+// Negative delays fill the background immediately; CSS handles every loop.
+const ambientHearts = document.querySelector('#ambient-hearts');
+const heartPositions = [4, 17, 31, 46, 61, 77, 92, 10, 25, 53, 70, 86, 39, 66, 6, 95, 20, 81];
+const heartFragment = document.createDocumentFragment();
+heartPositions.forEach((left, index) => {
+  const heart = document.createElement('span');
+  heart.className = 'ambient-heart';
+  heart.style.setProperty('--heart-left', `${left}%`);
+  heart.style.setProperty('--heart-size', `${[28, 39, 24, 44, 32, 22][index % 6]}px`);
+  heart.style.setProperty('--heart-duration', `${[17, 22, 19, 25, 20][index % 5]}s`);
+  heart.style.setProperty('--heart-delay', `${-((index * 7 + 4) % 23)}s`);
+  heart.style.setProperty('--heart-sway', `${4 + index % 4}s`);
+  heart.style.setProperty('--heart-opacity', index % 3 === 0 ? '.23' : '.36');
+  heart.style.setProperty('--heart-color', index % 2 ? '#d42d54' : '#ed789c');
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 40 40');
+  svg.setAttribute('focusable', 'false');
+  const shape = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  shape.setAttribute('d', 'M20 34C17 31 4 22 4 13C4 3 16 2 20 10C24 2 36 3 36 13C36 22 23 31 20 34Z');
+  shape.setAttribute('fill', index % 3 === 0 ? 'currentColor' : 'none');
+  shape.setAttribute('stroke', 'currentColor');
+  shape.setAttribute('stroke-width', '1.8');
+  svg.append(shape);
+  heart.append(svg);
+  heartFragment.append(heart);
+});
+ambientHearts.append(heartFragment);
+
 const motionToggle = document.querySelector('#motion-toggle');
 motionToggle.addEventListener('click', () => {
   decorativeMotionPaused = !decorativeMotionPaused;

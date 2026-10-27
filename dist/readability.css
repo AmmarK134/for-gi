@@ -1,0 +1,237 @@
+/* Readable little details, with the original large headlines left intact. */
+body { font-size: 17px; line-height: 1.7; }
+
+.hero-description,
+.section-heading > p:last-of-type,
+.promise p,
+.dates-heading > p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.section-heading > p:last-of-type { max-width: 350px; }
+.promise > div { min-width: 0; }
+.promise-number { font-size: 12px; flex-shrink: 0; padding-top: 7px; }
+.hero-footnote,
+.date-caption,
+.date-result .copy-help,
+.smile-reply,
+footer p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.eyebrow,
+.hero .eyebrow,
+.note-section .eyebrow,
+.date-meta,
+.closing-kicker {
+  font-size: 12px;
+  line-height: 1.65;
+  letter-spacing: 1.25px;
+}
+
+.tiny-heart { font-size: 15px; }
+.header-note,
+.handwritten,
+footer > span { font-size: 18px; }
+.doodle-heart span { font-size: 17px; line-height: 1.6; }
+
+.primary-button,
+.smile-button {
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 52px;
+  padding: 14px 24px;
+}
+
+.primary-button { gap: 22px; }
+.text-button,
+.motion-toggle {
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 46px;
+}
+
+.text-button { padding-top: 12px; padding-bottom: 12px; }
+.motion-toggle { padding: 10px 14px; letter-spacing: 0; flex-shrink: 0; }
+.close-dialog { width: 46px; height: 46px; }
+
+.site-header { column-gap: 24px; }
+.site-header > .wordmark { flex-shrink: 0; }
+.site-header nav { gap: 28px; }
+.site-header nav a {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ribbon {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  column-gap: 22px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ribbon > span { white-space: normal; text-align: center; }
+.date-description { font-size: 16px; line-height: 1.65; }
+.date-name { line-height: 1.12; }
+.date-selector { width: 34px; height: 34px; font-size: 19px; }
+.date-result p { font-size: 16px; line-height: 1.7; }
+#copy-fallback { font-size: 16px; line-height: 1.6; }
+.date-result { grid-template-columns: minmax(0, 1fr) auto; }
+
+/* Give the enlarged handwritten labels a little breathing room. */
+.letter-scene.duck-scene { min-height: 560px; }
+.duck-scene-label { font-size: 23px; line-height: 1.5; top: 35px; padding: 0 18px; }
+.duck-main { top: 100px; }
+.duck-mini { top: 240px; }
+.duck-tag { font-size: 18px; line-height: 1.5; }
+.duck-mini .duck-tag { font-size: 17px; line-height: 1.5; }
+.duck-sticker { font-size: 14px; width: 90px; height: 88px; top: 88px; }
+.duck-instruction {
+  font-size: 18px;
+  line-height: 1.55;
+  bottom: 65px;
+  padding: 0 18px;
+}
+
+.duck-instruction > span { font-size: 26px; margin-left: 5px; }
+.duck-scene-bottom {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  bottom: 23px;
+  padding: 0 16px;
+}
+
+.duck-paper > span { font-size: 30px; }
+.duck-paper i { font-size: 17px; line-height: 1.4; }
+.duck-mini .duck-paper > span { font-size: 23px; }
+.duck-mini .duck-paper i { font-size: 14px; line-height: 1.4; }
+.duck-mini .duck-paper { gap: 5px; }
+
+.letter-content > p,
+.letter-modal > p:not(.eyebrow) {
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 21px;
+}
+
+/* The original signature uses an important font shorthand. */
+.letter-modal .letter-signature { font-size: 17px !important; line-height: 1.8 !important; }
+.letter-content .letter-signature span,
+.letter-signature span { font-size: 17px; }
+.letter-modal > .eyebrow { padding-right: 22px; }
+.letter-modal .text-button { text-align: left; }
+
+footer { flex-wrap: wrap; }
+footer p { flex: 1 1 320px; text-align: center; }
+.closing-kicker { display: inline-block; max-width: 520px; }
+
+@media (max-width: 1000px) and (min-width: 701px) {
+  .honesty { gap: 6%; }
+  .promise { gap: 14px; }
+  .date-grid { gap: 22px; }
+  .date-name { font-size: 27px; }
+  .date-result { grid-template-columns: 1fr; }
+  .date-result .primary-button { justify-self: start; }
+  .duck-scene-label { font-size: 21px; }
+  .duck-main { top: 115px; }
+  .duck-mini { top: 255px; }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas: "brand motion" "navigation navigation";
+    column-gap: 12px;
+    row-gap: 8px;
+  }
+
+  .site-header > .wordmark { grid-area: brand; }
+  .site-header > .motion-toggle { grid-area: motion; justify-self: end; }
+  .site-header nav {
+    grid-area: navigation;
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0 18px;
+  }
+
+  .site-header nav a:first-child { display: inline-flex; }
+}
+
+@media (max-width: 700px) {
+  .site-header { padding-top: 20px; padding-bottom: 14px; }
+  .motion-toggle { font-size: 15px; padding: 10px 12px; min-height: 46px; }
+  .motion-toggle span { margin-left: 5px; }
+  .site-header nav a { font-size: 12px; letter-spacing: .85px; }
+  .hero-description { font-size: 17px; }
+  .hero-footnote { letter-spacing: 0; max-width: 330px; }
+  .hero .eyebrow { max-width: 350px; }
+  .primary-button { gap: 20px; padding-left: 22px; padding-right: 22px; }
+  .section-heading > p:last-of-type { max-width: 370px; }
+  .promise { gap: 13px; }
+  .promise h3 { line-height: 1.25; }
+  .promise > span:last-child { min-width: 18px; font-size: 24px; }
+  .doodle-heart { gap: 13px; }
+  .ribbon { gap: 14px; padding: 18px 5%; }
+  .ribbon > span { max-width: calc(100% - 65px); }
+  .note-section .eyebrow { max-width: 370px; margin-left: auto; margin-right: auto; }
+  .date-grid { gap: 34px; }
+  .date-card {
+    grid-template-columns: 36% minmax(0, 1fr);
+    column-gap: 18px;
+  }
+
+  .date-meta { font-size: 12px; letter-spacing: .8px; padding-top: 8px; }
+  .date-name { font-size: 28px; }
+  .date-description { font-size: 16px; padding-bottom: 8px; }
+  .date-art { align-self: center; }
+  .date-selector { width: 32px; height: 32px; font-size: 18px; bottom: 8px; right: 8px; }
+  .date-result { grid-template-columns: 1fr; }
+  .date-result .copy-help { font-size: 14px; }
+  .date-caption { font-size: 14px; }
+  .closing-kicker { font-size: 12px; line-height: 1.7; letter-spacing: 1px; }
+  .smile-reply { font-size: 14px; }
+  footer p { flex-basis: 100%; font-size: 14px; }
+  footer > span { font-size: 17px; }
+
+  .letter-scene.duck-scene { min-height: clamp(490px, calc(320px + 35vw), 550px); }
+  .duck-scene-label { font-size: 21px; top: 30px; }
+  .duck-main { top: 100px; }
+  .duck-mini { top: 220px; }
+  .duck-tag { font-size: 18px; }
+  .duck-mini .duck-tag { font-size: 17px; left: 20%; }
+  .duck-sticker { font-size: 14px; width: 86px; height: 84px; top: 83px; right: 14px; }
+  .duck-sticker b { font-size: 25px; }
+  .duck-instruction { font-size: 18px; bottom: 66px; }
+  .duck-scene-bottom { font-size: 12px; letter-spacing: .7px; bottom: 23px; }
+  .duck-paper > span { font-size: 27px; }
+  .duck-paper i { font-size: 17px; }
+  .duck-mini .duck-paper > span { font-size: 21px; }
+  .duck-mini .duck-paper i { font-size: 14px; }
+  .duck-mini .duck-paper b { font-size: 20px; }
+  .letter-content > p,
+  .letter-modal > p:not(.eyebrow) { font-size: 21px; line-height: 1.6; }
+}
+
+@media (max-width: 380px) {
+  .site-header { column-gap: 8px; }
+  .site-header nav { column-gap: 10px; }
+  .site-header nav a { letter-spacing: .6px; }
+  .date-card { grid-template-columns: 34% minmax(0, 1fr); column-gap: 15px; }
+  .duck-instruction > span { display: none; }
+  .duck-mini { top: 210px; }
+  .duck-mini .duck-tag { left: 16%; }
+  .duck-scene-bottom { letter-spacing: .4px; }
+}

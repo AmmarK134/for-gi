@@ -1,0 +1,48 @@
+/* A continuous paper-heart breeze behind the page, including while scrolling. */
+body { isolation: isolate; }
+.ambient-hearts {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  contain: strict;
+}
+.site-header, main, footer { position: relative; z-index: 1; }
+.ambient-heart {
+  position: absolute;
+  bottom: -80px;
+  left: var(--heart-left);
+  width: var(--heart-size);
+  height: var(--heart-size);
+  color: var(--heart-color);
+  opacity: 0;
+  will-change: transform;
+  animation: ambient-heart-flight var(--heart-duration) linear var(--heart-delay) infinite;
+}
+.ambient-heart svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: ambient-heart-sway var(--heart-sway) ease-in-out var(--heart-delay) infinite alternate;
+}
+@keyframes ambient-heart-flight {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  8%, 88% { opacity: var(--heart-opacity); }
+  100% { transform: translate3d(0, calc(-100vh - 160px), 0); opacity: 0; }
+}
+@keyframes ambient-heart-sway {
+  from { transform: translateX(-17px) rotate(-18deg); }
+  to { transform: translateX(17px) rotate(18deg); }
+}
+.motion-paused .ambient-heart,
+.motion-paused .ambient-heart svg { animation-play-state: paused !important; }
+@media (max-width: 700px) {
+  .ambient-heart:nth-child(n + 13) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-hearts { display: none; }
+  .ambient-heart, .ambient-heart svg { animation: none !important; }
+}
