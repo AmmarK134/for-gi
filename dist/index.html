@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f8eeeb">
+  <meta name="theme-color" content="#fff1f3">
   <meta name="description" content="A little pink corner of the internet, made just for Giovanna. A promise, kept.">
   <meta name="robots" content="noindex, nofollow">
   <title>For Gi, with a little courage ♡</title>
@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cutesy.css">
+  <link rel="stylesheet" href="ducks.css">
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -22,41 +24,42 @@
       <a href="#little-things">A LITTLE HONESTY</a>
       <a href="#next-chapter">CHAPTER TWO <span aria-hidden="true">↗</span></a>
     </nav>
-    <span class="header-note">a promise, kept.</span>
+    <button class="motion-toggle" id="motion-toggle" aria-pressed="false" aria-label="Pause decorative motion">hearts in motion <span aria-hidden="true">♥</span></button>
   </header>
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="tiny-heart" aria-hidden="true">♥</span> SOMETHING SMALL. JUST FOR YOU.</p>
-        <h1 id="hero-title">Some promises<br>deserve a<br>little <em>pink.</em><span class="title-spark" aria-hidden="true">✧</span></h1>
+        <p class="eyebrow"><span class="tiny-heart" aria-hidden="true">♥</span> FOLDED WITH A LITTLE EXTRA FEELING</p>
+        <h1 id="hero-title">A little duck.<br>A little love.<br>Just for <em>Gi.</em><span class="title-spark" aria-hidden="true">♡</span></h1>
         <p class="hero-description">I said I’d make you a website.<br>I also wanted to make you smile.</p>
-        <button class="primary-button" data-open-letter>Open your letter <span aria-hidden="true">↗</span></button>
-        <p class="hero-footnote">made with a little courage & a lot of pink</p>
+        <button class="primary-button" data-open-letter="main">Unfold your love note <span aria-hidden="true">♡</span></button>
+        <p class="hero-footnote">two paper ducks. a few butterflies. all for you.</p>
       </div>
 
-      <div class="letter-scene">
-        <span class="scene-large-letter" aria-hidden="true">G</span>
-        <span class="scene-caption">special delivery</span>
-        <span class="scene-star star-one" aria-hidden="true">✧</span>
-        <span class="scene-star star-two" aria-hidden="true">✧</span>
-        <div class="postmark" aria-hidden="true"><span>ONE OF ONE</span><b>♡</b><span>JUST FOR GI</span></div>
-        <button class="envelope" data-open-letter aria-label="Open the letter addressed to Giovanna">
-          <span class="letter-peek"><span>Hey Gi,</span><span>this one’s for you.</span></span>
-          <span class="envelope-back"></span>
-          <span class="envelope-front"></span>
-          <span class="envelope-flap"></span>
-          <span class="envelope-address">to: Giovanna</span>
-          <span class="wax-seal" aria-hidden="true">♥</span>
+      <div class="letter-scene duck-scene" aria-label="Two origami ducks carrying notes for Gi">
+        <span class="duck-scene-label">the little love-note pond</span>
+        <div class="duck-heart-cloud" aria-hidden="true"><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♥</span><span>♡</span></div>
+        <span class="duck-sticker" aria-hidden="true">sealed with<br>a little <b>♡</b></span>
+        <div class="duck-pond" aria-hidden="true"></div>
+        <button class="duck-button duck-main" id="duck-main" data-open-letter="main" aria-label="Unfold the pink origami duck into your letter" aria-controls="letter-dialog">
+          <span class="duck-paper" aria-hidden="true"><span>Hey Gi,</span><i>this one’s for you.</i><b>♡</b></span>
+          <span class="duck-art" data-duck-art aria-hidden="true"></span>
+          <span class="duck-tag">your letter <span aria-hidden="true">♡</span></span>
         </button>
-        <div class="handwritten-scene" aria-hidden="true">psst… there’s a letter inside <span>⤴</span></div>
-        <span class="scene-heart heart-one" aria-hidden="true">♡</span>
-        <span class="scene-heart heart-two" aria-hidden="true">♥</span>
-        <span class="scene-bottom">HANDLE WITH A LITTLE HEART</span>
+        <button class="duck-button duck-mini" id="duck-bonus" data-open-letter="bonus" aria-label="Unfold the red origami duck for a tiny bonus note" aria-controls="letter-dialog">
+          <span class="duck-paper" aria-hidden="true"><span>Psst, Gi…</span><i>a tiny confession.</i><b>♥</b></span>
+          <span class="duck-art" data-duck-art aria-hidden="true"></span>
+          <span class="duck-tag">a tiny secret <span aria-hidden="true">♥</span></span>
+        </button>
+        <span class="duck-instruction">tap a duck to unfold its heart <span aria-hidden="true">⤴</span></span>
+        <span class="duck-scene-bottom">SPECIAL DELIVERY FOR GIOVANNA <span aria-hidden="true">♥</span></span>
       </div>
     </section>
 
-    <div class="ribbon" aria-hidden="true"><span>ONE REALLY GOOD FIRST DATE</span><b>✧</b><span>A LITTLE UNFINISHED BUSINESS</span><b>✧</b><span>YOU, ME & A NEXT CHAPTER?</span><b>✧</b></div>
+    <p class="visually-hidden" id="duck-status" role="status"></p>
+
+    <div class="ribbon" aria-hidden="true"><span>FOLDED WITH FEELINGS</span><b>♥</b><span>A LITTLE PINK. A LOT OF BUTTERFLIES.</span><b>♡</b><span>YOU, ME & A NEXT CHAPTER?</span><b>♥</b></div>
 
     <section class="honesty section-wrap" id="little-things" aria-labelledby="honesty-title">
       <div class="section-heading">
@@ -113,16 +116,41 @@
   <dialog id="letter-dialog" aria-labelledby="letter-title">
     <div class="letter-modal">
       <button class="close-dialog" aria-label="Close the letter">×</button>
-      <p class="eyebrow">A NOTE, JUST FOR YOU</p>
+      <p class="eyebrow">DELIVERED BY ONE VERY SMITTEN DUCK</p>
       <h2 id="letter-title">Hey Gi,</h2>
+      <div class="letter-content" id="main-letter-content">
       <p>I know I’ve been a little quiet. Exams took up a lot of my time, and I haven’t put in the effort I wanted to. But I didn’t forget you, or the promise.</p>
       <p>So here’s your own little corner of the internet. A little pink, a little extra, and a very unsubtle way of saying I’d like to get to know you better.</p>
       <p>I liked our first date.<br><em>I’d really like a second.</em></p>
       <p>And yes, I remember the <i>Off-Campus</i> promise, too.</p>
       <p class="letter-signature">With a little courage,<br><span>your slightly nerdy date ♡</span></p>
+      </div>
+      <div class="letter-content bonus-letter-content" id="bonus-letter-content" hidden>
+        <p>A tiny confession: I put a ridiculous number of hearts in this website.</p>
+        <p>Then I added a duck.<br>Then another duck.<br><em>Apparently, making you smile is a whole project now.</em></p>
+        <p>If this little paper guy could talk, he’d say I’m looking forward to seeing you again.</p>
+        <p class="letter-signature">Okay, that’s the secret.<br><span>You’re pretty easy to be sweet on. ♡</span></p>
+      </div>
       <button class="text-button" id="letter-to-dates">So, about that next chapter… <span aria-hidden="true">↗</span></button>
     </div>
   </dialog>
   <div class="heart-confetti" id="heart-confetti" aria-hidden="true"></div>
+  <template id="duck-shape-template">
+    <svg class="duck-svg" viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg" focusable="false">
+      <g class="duck-folds" stroke="var(--duck-outline)" stroke-width="1.4" stroke-linejoin="round">
+        <polygon class="duck-fold duck-tail" fill="var(--duck-mid)" points="91,178 45,145 56,204 111,218"/>
+        <polygon class="duck-fold duck-body" fill="var(--duck-light)" points="68,177 108,143 213,147 265,194 226,229 120,235 73,212"/>
+        <polygon class="duck-fold duck-belly" fill="var(--duck-pale)" points="73,212 169,181 265,194 226,229 120,235"/>
+        <polygon class="duck-fold duck-neck" fill="var(--duck-mid)" points="215,150 241,121 270,146 265,194"/>
+        <g class="duck-fold duck-head">
+          <polygon fill="var(--duck-light)" points="237,101 272,87 304,105 307,140 278,159 245,145"/>
+          <path d="M237 101 278 126 278 159M278 126 304 105" fill="none" stroke="var(--duck-crease)" stroke-width="1"/>
+          <g class="duck-face" stroke="none"><circle cx="287" cy="115" r="3.1" fill="#6c253a"/><circle cx="288" cy="114" r=".8" fill="#fff7f5"/><ellipse cx="282" cy="135" rx="8" ry="5" fill="var(--duck-cheek)"/></g>
+        </g>
+        <polygon class="duck-fold duck-bill" fill="var(--duck-beak)" points="305,121 339,129 337,144 306,145"/>
+        <g class="duck-fold duck-wing"><polygon fill="var(--duck-mid)" points="108,143 212,147 227,202 169,181"/><path d="m108 143 61 38 43-34" fill="none" stroke="var(--duck-crease)"/><path fill="var(--duck-heart)" stroke="none" d="M166 176c-10-7-15-12-11-17 4-4 9-1 11 2 3-5 8-6 12-2 4 5-2 11-12 17Z"/></g>
+      </g>
+    </svg>
+  </template>
 </body>
 </html>
